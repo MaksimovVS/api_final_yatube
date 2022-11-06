@@ -11,6 +11,10 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Post
+        read_only_fields = (
+            "pub_date",
+            "author",
+        )
 
 
 class CommentSerializer(serializers.ModelSerializer):
