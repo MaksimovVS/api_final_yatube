@@ -12,6 +12,7 @@ class Group(models.Model):
     slug = models.SlugField(
         'slug группы',
         unique=True,
+        max_length=50,
     )
     description = models.TextField(
         'Описание группы',
@@ -116,4 +117,4 @@ class Follow(models.Model):
             )]
 
     def __str__(self):
-        return f'{self.user} подписан на {self.following}'
+        return f'{self.user__username} подписан на {self.following__username}'
